@@ -7,7 +7,7 @@ class GeneralInfo extends Component {
 
   render() {
     const { genInfo, handleChange,component } = this.props;
-    console.log(genInfo)
+    console.log(eval(component).name)
 
     const onchange = e => handleChange(e, component);
 

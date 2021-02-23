@@ -27,7 +27,8 @@ class Resume extends Component {
         jobTitle: "",
         dateStart: "",
         dateEnd: "",
-        mainJobTasks: [],
+        mainJobTasks: "", // TODO: make this an array of tasks
+                          // then display in bullets
       },
     };
   }
@@ -56,7 +57,7 @@ class Resume extends Component {
           component="genInfo"
         />
         <Experience 
-          exp={experience} 
+          experience={experience} 
           handleChange={this.handleChange}
           component="experience"
         />
