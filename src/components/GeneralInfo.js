@@ -6,14 +6,37 @@ class GeneralInfo extends Component {
   }
 
   render() {
-    const { genInfo } = this.props;
-    console.log(genInfo.name)
+    const { genInfo, handleChange,component } = this.props;
+    console.log(genInfo)
+
+    const onchange = e => handleChange(e, component);
+
     return (
       <div>
-        <input type="text" value={genInfo.name} onChange={this.props.handleChange}/>
-        <input type="text" />
-        <input type="number" />
-        <input type="email" />
+        <input 
+          type="text" 
+          value={genInfo.name}
+          onChange={onchange} 
+          name="name"
+        />
+        <input 
+          type="text" 
+          value={genInfo.position}
+          onChange={onchange}
+          name="position"
+        />
+        <input 
+          type="number" 
+          value={genInfo.phoneNum}
+          onChange={onchange}
+          name="phoneNum"
+        />
+        <input 
+          type="email" 
+          value={genInfo.email}
+          onChange={onchange}
+          name="email"
+        />
       </div>
     )
   }

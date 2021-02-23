@@ -10,25 +10,61 @@ class Resume extends Component {
     this.state = {
       genInfo: {
         name: "",
+        position: "",
+        phoneNum: 0,
+        email: "",
+      },
+      education: {
+        schoolName: "",
+        schoolLocation: "",
+        degree: "",
+        dateStart: "",
+        dateEnd: "",
+      },
+      experience: {
+        company: "",
+        location: "",
+        jobTitle: "",
+        dateStart: "",
+        dateEnd: "",
+        mainJobTasks: [],
       },
     };
   }
 
-  handleChange = e => {
+  handleChange = (e, componentName) => {
+    const changedInfo = e.target.name;
+    const component = componentName;
+
     this.setState({
-      genInfo: {
-        ...this.state.genInfo, 
-        name: e.target.value
+      [component]: {
+        ...this.state[component], 
+        // sets whatever input field is changed
+        [changedInfo]: e.target.value
       }
     })
   }
 
   render() {
+    const { genInfo, experience, education } = this.state;
+
     return (
       <form onSubmit={this.handleSubmit}>
-        <GeneralInfo genInfo={this.state.genInfo} handleChange={this.handleChange}/>
-        <Experience />
-        <Education />
+        <GeneralInfo 
+          genInfo={genInfo} 
+          handleChange={this.handleChange}
+          component="genInfo"
+        />
+        <Experience 
+          exp={experience} 
+          handleChange={this.handleChange}
+          component="experience"
+        />
+        <Education 
+          education={education} 
+          handleChange={this.handleChange}
+          component="education"
+        />
         <input type="submit" value="Submit" />
       </form>
     )
