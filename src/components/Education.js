@@ -10,7 +10,7 @@ class Education extends React.Component {
     const onchange = e => handleChange(e, component);
 
     return (
-      <div>
+      <div className="input-group">
         <input 
           type="text" 
           value={education.schoolName}

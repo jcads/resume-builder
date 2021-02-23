@@ -12,7 +12,7 @@ class GeneralInfo extends Component {
     const onchange = e => handleChange(e, component);
 
     return (
-      <div>
+      <div className="input-group">
         <input 
           type="text" 
           value={genInfo.name}

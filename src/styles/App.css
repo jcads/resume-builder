@@ -1,3 +1,42 @@
+*, ::before, ::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  width: 60%;
+  margin: 2rem auto;
+  box-shadow:
+    0 1px 1px rgba(34, 51, 85, 0.09),
+    0 4px 6px rgba(34, 51, 85, 0.08),
+    0 8px 12px rgba(34, 51, 85, 0.08),
+    0 17px 24px rgba(34, 51, 85, 0.06);
+  border: 1px #b0a3a3 solid;
+  background-color: white;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #E2F3FD;
+}
+
+form {
+  padding: 2rem;
+}
+
 input {
   display: block;
+  margin: .5rem;
+}
+
+input[type="submit"] {
+  margin: 0 auto;
+}
+
+.input-group {
+  padding: 2.5rem;
 }
