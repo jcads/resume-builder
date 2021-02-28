@@ -7,8 +7,7 @@ class Section extends Component {
 
   render() {
     const { fields, handleChange, section } = this.props;
-    console.log(fields)
-    console.log(section);
+    console.log(fields);
 
     const onchange = e => handleChange(e, section);
 
