@@ -1,11 +1,14 @@
-*, ::before, ::after {
+*, *::before, *::after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
 .App {
+/*	height: 79.2rem;
+	width: 61.2rem; */
   width: 60%;
+  height: 81.7rem;
   margin: 2rem auto;
   box-shadow:
     0 1px 1px rgba(34, 51, 85, 0.09),
@@ -14,6 +17,7 @@
     0 17px 24px rgba(34, 51, 85, 0.06);
   border: 1px #b0a3a3 solid;
   background-color: white;
+	box-sizing: content-box;
 }
 
 html {
@@ -39,4 +43,8 @@ input[type="submit"] {
 
 .input-group {
   padding: 2.5rem;
+}
+
+.hidden {
+  display: none;
 }

@@ -12,14 +12,16 @@ const data = {
     startYear: "2017",
     endYear: "2021",
   },
-  experience: {
-    company: "100DEvs",
-    location: "Boston, MA",
-    jobTitle: "Full Stack Engineer",
-    dateStart: "May 2019",
-    dateEnd: "Present",
-    jobSummary: "Work stuff here", // TODO: make this an array of tasks
-  },
+  experience: [
+    {
+      company: "100DEvs",
+      location: "Boston, MA",
+      jobTitle: "Full Stack Engineer",
+      dateStart: "May 2019",
+      dateEnd: "Present",
+      jobSummary: "Work stuff here", // TODO: make this an array of tasks
+    },
+  ],
 }
 
 export default data

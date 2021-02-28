@@ -1,5 +1,8 @@
 import React, {Component} from "react";
+
 import InputFields from "./components/InputFields";
+import Resume from "./components/Resume";
+
 import data from "./dummyData";
 import "./styles/App.css";
 
@@ -7,26 +10,29 @@ class App extends Component {
   constructor() {
     super();
 
-    this.state = data;
+    this.state = {
+      data,
+      hideResume: true,
+    };
   }
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log("submit")
-    
+    this.setState(prev => {
+      const prevHideResume = prev.hideResume;
+
+      return {...prev.state, hideResume: !prevHideResume}
+    })
   }
 
   render() {
-    //const { genInfo, experience, education } = this.state;
-    const resumeStyles = {
-      display: "none",
-    }
+    const { data, hideResume } = this.state;
 
     return (
       <div className="App">
-        {/*<Resume data={this.state} />*/}
-        <form onSubmit={this.handleSubmit}>
-          <InputFields data={this.state} />
+        <Resume className={hideResume ? "hidden" : null} data={data} />
+        <form className={hideResume ? null : "hidden"} onSubmit={this.handleSubmit}>
+          <InputFields data={data} />
           <input type="submit" value="Submit" />
         </form>
       </div>

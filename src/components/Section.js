@@ -6,18 +6,18 @@ class Section extends Component {
   }
 
   render() {
-    const { fields, handleChange, section } = this.props;
-    console.log(fields);
+    const { inputs, handleChange, section } = this.props;
+    console.log(inputs);
 
     const onchange = e => handleChange(e, section);
 
-    const inputElements = fields.map((field, idx) => {
+    const inputElements = inputs.map((input, idx) => {
       return( 
         <input 
           key={idx}
-          name={field[0]} 
-          type={field[1]} 
-          value={field[2]}
+          name={input[0]} 
+          type={input[1]} 
+          value={input[2]}
           onChange={onchange}
         />
       )
