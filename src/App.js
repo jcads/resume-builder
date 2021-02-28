@@ -1,14 +1,37 @@
-import React from "react"
-import Resume from "./components/Resume";
-import "./styles/App.css"
+import React, {Component} from "react";
+import InputFields from "./components/InputFields";
+import data from "./dummyData";
+import "./styles/App.css";
 
-function App() {
+class App extends Component {
+  constructor() {
+    super();
 
-  return (
-    <div className="App">
-      <Resume />
-    </div>
-  );
+    this.state = data;
+  }
+
+  handleSubmit = e => {
+    e.preventDefault();
+    console.log("submit")
+    
+  }
+
+  render() {
+    //const { genInfo, experience, education } = this.state;
+    const resumeStyles = {
+      display: "none",
+    }
+
+    return (
+      <div className="App">
+        {/*<Resume data={this.state} />*/}
+        <form onSubmit={this.handleSubmit}>
+          <InputFields data={this.state} />
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App
