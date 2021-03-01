@@ -5,7 +5,9 @@
 }
 
 .App {
-  width: 60%;
+  width: 80.92rem;
+  height: 81.7rem;
+  box-sizing: content-box;
   margin: 2rem auto;
   box-shadow:
     0 1px 1px rgba(34, 51, 85, 0.09),
@@ -39,4 +41,8 @@ input[type="submit"] {
 
 .input-group {
   padding: 2.5rem;
+}
+
+.hidden {
+  display: none;
 }
